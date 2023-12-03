@@ -14,7 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
   tf2_msgs
   std_msgs
   tf2_sensor_msgs
-  message_generation
   geometry_msgs
   dynamic_reconfigure
 )
