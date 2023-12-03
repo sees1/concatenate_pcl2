@@ -19,7 +19,7 @@ public:
   {
     nh_.param<float>("theta",    theta,    -M_PI);
     nh_.param<float>("x_offset", x_offset, -1.15);
-    nh_.param<float>("y_offset", y_offset, -0.30);
+    nh_.param<float>("y_offset", y_offset, -0.23);
 
     nh_.param<std::string>("cloud1",    cloud_topic1,    "/points2_front");
     nh_.param<std::string>("cloud2",    cloud_topic2,    "/points2_rear");
