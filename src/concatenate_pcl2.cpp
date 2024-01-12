@@ -61,11 +61,13 @@ public:
 
   void frontCallBack(const sensor_msgs::PointCloud2 &cloud)
   {
+    ROS_INFO("frontCallBack called");
     pcl2_front = cloud;
   }
 
   void rearCallBack(const sensor_msgs::PointCloud2 &cloud)
   {
+    ROS_INFO("rearCallBack called");
     pcl_ros::transformPointCloud (transform_1, cloud, pcl2_rear);
   }
 
@@ -74,7 +76,6 @@ public:
     return pcl2_front;
   }
 
-
   sensor_msgs::PointCloud2& getRearPCL2()
   {
     return pcl2_rear;
@@ -82,6 +83,7 @@ public:
 
   void PublishOut(const sensor_msgs::PointCloud2 &cloud)
   {
+    ROS_INFO("publish smth in /points2_out");
     out_publisher.publish(cloud);
   }
 
