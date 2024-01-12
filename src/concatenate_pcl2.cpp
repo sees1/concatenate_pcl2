@@ -39,25 +39,25 @@ public:
     transform_1 (0,3) = x_offset;
     transform_1 (1,3) = y_offset;
 
-    f = boost::bind(&Concatenate::dynamicCallBack, this, _1, _2);
-    server.setCallback(f);
+    // f = boost::bind(&Concatenate::dynamicCallBack, this, _1, _2);
+    // server.setCallback(f);
   }
 
-  void dynamicCallBack(concatenate_pcl2::concatenateConfig &config, uint32_t level)
-  {
-    x_offset = config.x_offset;
-    y_offset = config.y_offset;
+  // void dynamicCallBack(concatenate_pcl2::concatenateConfig &config, uint32_t level)
+  // {
+  //   x_offset = config.x_offset;
+  //   y_offset = config.y_offset;
 
-    transform_1 = Eigen::Matrix4f::Identity();
+  //   transform_1 = Eigen::Matrix4f::Identity();
 
-    transform_1 (0,0) = std::cos (theta);
-    transform_1 (0,1) = -sin(theta);
-    transform_1 (1,0) = sin (theta);
-    transform_1 (1,1) = std::cos (theta);
+  //   transform_1 (0,0) = std::cos (theta);
+  //   transform_1 (0,1) = -sin(theta);
+  //   transform_1 (1,0) = sin (theta);
+  //   transform_1 (1,1) = std::cos (theta);
 
-    transform_1 (0,3) = x_offset;
-    transform_1 (1,3) = y_offset;
-  }
+  //   transform_1 (0,3) = x_offset;
+  //   transform_1 (1,3) = y_offset;
+  // }
 
   void frontCallBack(const sensor_msgs::PointCloud2 &cloud)
   {
@@ -99,8 +99,8 @@ private:
   ros::Subscriber front_subscriber;
   ros::Subscriber rear_subscriber;
 
-  dynamic_reconfigure::Server<concatenate_pcl2::concatenateConfig> server;
-  dynamic_reconfigure::Server<concatenate_pcl2::concatenateConfig>::CallbackType f;
+  // dynamic_reconfigure::Server<concatenate_pcl2::concatenateConfig> server;
+  // dynamic_reconfigure::Server<concatenate_pcl2::concatenateConfig>::CallbackType f;
 
   Eigen::Matrix4f transform_1;
 
