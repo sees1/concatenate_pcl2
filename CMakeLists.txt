@@ -38,7 +38,7 @@ catkin_package(
   CATKIN_DEPENDS roscpp sensor_msgs tf2_ros
 )
 
-include_directories(include ${catkin_INCLUDE_DIRS})
+include_directories(${catkin_INCLUDE_DIRS})
 
 ###########
 ## Build ##
