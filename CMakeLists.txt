@@ -33,7 +33,7 @@ generate_dynamic_reconfigure_options(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS
   LIBRARIES concatenate_pcl2
   CATKIN_DEPENDS roscpp sensor_msgs tf2_ros
 )
